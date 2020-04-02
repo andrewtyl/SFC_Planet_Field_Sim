@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/andrewtyl/SFC_Planet_Field_Sim#readme",
   "dependencies": {
-    "performance-now": "^2.1.0"
+    "performance-now": "^2.1.0",
+    "random-normal": "^1.0.0"
   }
 }
