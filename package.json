@@ -4,7 +4,8 @@
   "description": "A mass simulator used to calculate the RNG of planet size when colonizing a planet in Starfleet Commander.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/andrewtyl/SFC_Planet_Field_Sim#readme",
   "dependencies": {
-    "performance-now": "^2.1.0",
-    "random-normal": "^1.0.0"
+    "unirand": "^2.7.0"
+  },
+  "devDependencies": {
+    "performance-now": "^2.1.0"
   }
 }

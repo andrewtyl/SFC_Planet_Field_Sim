@@ -5,4 +5,4 @@ if (dev === true) {
 }
 const single_simulate = require('./planet_sim')
 
-console.log(single_simulate(1))
+console.log(single_simulate(4))

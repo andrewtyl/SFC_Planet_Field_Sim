@@ -1,5 +1,6 @@
-//Math.random will not work here, as SFC uses a Gaussian Random Number Generator AND a uniformly distributed random number generator.
-const gRandom = require('random-normal')
+//Math.random will not work here, as SFC uses a Gaussian Random Number Generator (normal distribution) AND a uniformly distributed random number generator. While Math.random does use an approximate uniform distribution, 'unirand' has a built in uniform RNG that I will be using instead.
+const unirand = require('unirand')
+
 
 module.exports = function single_simulate(slot) {
     if (slot === undefined) {
@@ -28,7 +29,7 @@ module.exports = function single_simulate(slot) {
         lowerLimit: 43,
         upperLimit: 73
     }
-    
+
     const slot3 = {
         slot: 3,
         mean: 73,
@@ -136,6 +137,28 @@ module.exports = function single_simulate(slot) {
 
     const slotsInfo = [null, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12, slot13, slot14, slot15]
 
-    
+
+    const thisPlanetChance = slotsInfo[slot]
+    let thisPlanetFields;
+    let planetGenerated = false;
+    while (planetGenerated === false) {
+        thisPlanetFields = Math.floor(unirand.normal(thisPlanetChance.mean, thisPlanetChance.standardDiv).randomSync())
+        if (thisPlanetFields >= thisPlanetChance.lowerLimit || thisPlanetFields <= thisPlanetChance.upperLimit) {
+            if (thisPlanetFields > (thisPlanetChance.mean + thisPlanetChance.standardDiv) || thisPlanetFields < (thisPlanetChance.mean - thisPlanetChance.standardDiv)) {
+                thisPlanetFields = Math.floor(unirand.uniform(40, 321).randomSync())
+                planetGenerated = true
+            }
+        }
+    }
+
+    return thisPlanetFields
+
+
+
+
+
+
+
+    //If the gRandom returns a value outside of 1 standard deviation away from the mean in either direction, a uniformly distributed random num generator between 40 and 320 is used instead. No planet larger than 320 or smaller than 40 will be created by colonization.
 
 }
