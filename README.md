@@ -14,10 +14,10 @@ While you would likely only build your main buildings up to a certain point (Cap
 So my question here is this. What are the actual odds of getting a 320 field planet?
 
 ### How to Use
-Use the 'npm start' script to run the program. You may adjust the amount of simulations for more or less precision. For reference, on my system, 125 thousand simulations takes about 1 second.
+Use the 'npm start' script to run the program. You may adjust the amount of simulations for more or less precision. For reference, on my system, 400 thousand simulations takes about 1 second.
 
 ### Conclusion
-For my results, I ran the simulation 7.5 million times on planet slot 4. I found that you only have about a 0.35% chance of getting the maximum fields of 320, with about a 7.5% chance of getting a planet size at or over 300 fields. I'm surprised by the bigger than expected odds for 300 fields or more, but the 320 field chance is about what I expected.
+For my results, I ran the simulation 25 million times on planet slot 4. I found that you only have about a 0.11% chance of getting the maximum fields of 320, with about a 2.3% chance of getting a planet size at or over 300 fields. I'm surprised by the bigger than expected odds for 300 fields or more, but the 320 field chance is about what I expected.
 
 
 ##### License

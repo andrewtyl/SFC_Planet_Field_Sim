@@ -4,7 +4,7 @@ const now = require('performance-now')
 const single_simulate = require('./planet_sim')
 
 const planetSlot = 4
-const simulationCount = 7500000
+const simulationCount = 400000
 
 function simulate(slot, simCount) {
     console.log("Program has started...please wait...")
